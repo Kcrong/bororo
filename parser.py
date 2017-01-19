@@ -1,5 +1,6 @@
 from konlpy.tag import Mecab
 from utility.exception import ignore
+from utility.data_manage import return2type
 
 
 class Tagger:
@@ -10,10 +11,12 @@ class Tagger:
         self.tag = dict(Tagger.__pos_tagger.pos(self.sentence))
 
     @property
+    @return2type(list)
     def pos_list(self):
         return self.tag.values()
 
     @property
+    @return2type(list)
     def word_list(self):
         return self.tag.keys()
 
