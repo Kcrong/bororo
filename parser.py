@@ -40,6 +40,23 @@ class Analyser:
     def __repr__(self):
         return f"<Analyser {self.tag.sentence}>"
 
+    def find_direct_object_info(self):
+        """
+        Find the 'direct object' from self.sentence and its meaning.
+        """
+        name = None
+        mean = None
+
+        for idx in range(len(self.tag.pos)):
+            morph = self.tag.morph_list[idx]
+            if morph in self.tag.word_list:
+                if self.tag.pos_list[idx + 1].startswith("VC"):
+                    name = morph
+                else:
+                    mean = morph
+
+        return name, mean
+
 
 if __name__ == '__main__':
     tag = Tagger("사과는 과일이다.")
