@@ -29,7 +29,7 @@ class Analyser:
         except AssertionError:
             print("Error!!!")
         """
-        with ignore(AssertionError, "Wrong Param!"):
+        with ignore(AssertionError, error_message="Wrong Param!"):
             assert type(tag) == Tagger
 
         self.tag = tag
