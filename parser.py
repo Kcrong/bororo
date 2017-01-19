@@ -34,6 +34,9 @@ class Analyser:
 
         self.tag = tag
 
+    def __repr__(self):
+        return f"<Analyser {self.tag.sentence}>"
+
 
 if __name__ == '__main__':
     tag = Tagger("사과는 과일이다.")
