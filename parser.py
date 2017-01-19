@@ -29,13 +29,10 @@ class Tagger:
 
 
 class Analyser:
+    """
+    Tokenize Sentence
+    """
     def __init__(self, tag):
-        """
-        try:
-            assert type(tag) == Tagger
-        except AssertionError:
-            print("Error!!!")
-        """
         assert type(tag) == Tagger
 
         self.tag = tag
