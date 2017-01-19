@@ -37,11 +37,12 @@ class Analyser:
         assert type(tag) == Tagger
 
         self.tag = tag
+        self.name, self.mean, self.bool_type = self.__analysis()
 
     def __repr__(self):
         return f"<Analyser {self.tag.sentence}>"
 
-    def analysis(self):
+    def __analysis(self):
         for pos in self.tag.pos_list:
             if pos.startswith("VC"):
                 if pos.endswith("P"):  # positive designator
