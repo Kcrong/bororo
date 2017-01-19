@@ -35,7 +35,7 @@ class Thing:
             # 기존에 알고있던 정보
             assert getattr(self, name) is not None
         except (AttributeError, AssertionError):
-            self.__add_new_info(name, value)
+            self.__add_new_info(name, value, _bool)
         else:
             # 이미 알고있던 정보일 경우
             # 강제 기억
