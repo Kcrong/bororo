@@ -44,10 +44,7 @@ def return2type(type2change):
 
     def real_deco(func):
         def wrapper(*args, **kwargs):
-            result = func(*args, **kwargs)
-            result_type = type(result)
-
-            return result_type([type2change(data) for data in result])
+            return type2change(func(*args, **kwargs))
 
         return wrapper
 
