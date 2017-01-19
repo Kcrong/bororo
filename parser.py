@@ -1,5 +1,6 @@
 from konlpy.tag import Mecab
 from utility.data_manage import return2type
+from utility.exception import AnalysisError
 
 
 class Tagger:
@@ -39,6 +40,25 @@ class Analyser:
 
     def __repr__(self):
         return f"<Analyser {self.tag.sentence}>"
+
+    def analysis(self):
+        for pos in self.tag.pos_list:
+            if pos.startswith("VC"):
+                if pos.endswith("P"):  # positive designator
+                    bool_type = True
+                elif pos.endswith("N"):  # negative designator
+                    bool_type = False
+                else:
+                    raise AnalysisError("UnKnown Designator")
+                break
+        else:
+            # sentence has no designator
+            print(f"Can't Analysis \"{self.tag.sentence}\"")
+            raise AnalysisError("UnKnown Sentences")
+
+        name, mean = self.find_direct_object_info()
+
+        return name, mean, bool_type
 
     def find_direct_object_info(self):
         """
