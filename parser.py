@@ -1,5 +1,5 @@
 from konlpy.tag import Mecab
-from .utility.exception import ignore
+from utility.exception import ignore
 
 
 class Tagger:
