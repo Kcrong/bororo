@@ -72,9 +72,9 @@ class Analyser:
             morph = self.tag.morph_list[idx]
             if morph in self.tag.word_list:
                 if self.tag.pos_list[idx + 1].startswith("VC"):
-                    name = morph
-                else:
                     mean = morph
+                else:
+                    name = morph
 
         return name, mean
 
