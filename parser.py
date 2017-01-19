@@ -33,10 +33,8 @@ class Analyser:
     """
     Tokenize Sentence
     """
-    def __init__(self, tag):
-        assert type(tag) == Tagger
-
-        self.tag = tag
+    def __init__(self, sentence):
+        self.tag = Tagger(sentence)
         self.name, self.mean, self.bool_type = self.__analysis()
 
     def __repr__(self):
@@ -80,4 +78,5 @@ class Analyser:
 
 
 if __name__ == '__main__':
-    tag = Tagger("사과는 과일이다.")
+    a = Analyser("사과는 과일이다.")
+    print(a.name, a.mean, a.bool_type)
