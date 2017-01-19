@@ -30,7 +30,7 @@ class Thing:
     def __repr__(self):
         return f"<Thing {self.name}"
 
-    def learn_info(self, name, value, force=False):
+    def learn_info(self, name, value, _bool, force=False):
         try:
             # 기존에 알고있던 정보
             assert getattr(self, name) is not None
@@ -40,11 +40,11 @@ class Thing:
             # 이미 알고있던 정보일 경우
             # 강제 기억
             if force is True:
-                self.__add_new_info(name, value)
+                self.__add_new_info(name, value, _bool)
             else:
                 raise KnownError("This information is already known.")
 
-    def __add_new_info(self, name, value):
+    def __add_new_info(self, name, value, _bool):
         setattr(self, name, value)
         self.__info.append(name)
 
