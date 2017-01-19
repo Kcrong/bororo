@@ -7,6 +7,21 @@ class KnownError(Exception):
     pass
 
 
+class Info:
+    bool_str_mapper = {
+        True: "",
+        False: "not"
+    }
+
+    def __init__(self, bool, name, value):
+        self.bool = bool
+        self.name = name
+        self.value = value
+
+    def __repr__(self):
+        return f"<Info {self.name} is {self.bool_str_mapper[self.bool]} {self.value}"
+
+
 class Thing:
     def __init__(self):
         self.name = None
