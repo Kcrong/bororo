@@ -32,16 +32,17 @@ class Thing:
 
     def learn_info(self, name, value, _bool, force=False):
         try:
-            # 기존에 알고있던 정보
+            # check already know
             assert getattr(self, name) is not None
         except (AttributeError, AssertionError):
             self.__add_new_info(name, value, _bool)
         else:
-            # 이미 알고있던 정보일 경우
-            # 강제 기억
+            # if already know
+            # check force learning option
             if force is True:
                 self.__add_new_info(name, value, _bool)
             else:
+                # raise AlreadyKnowError
                 raise KnownError("This information is already known.")
 
     def __add_new_info(self, name, value, _bool):
