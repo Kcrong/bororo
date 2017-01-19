@@ -10,6 +10,7 @@ class KnownError(Exception):
 class Thing:
     def __init__(self):
         self.name = None
+        self.__info = ["name"]
 
     def __repr__(self):
         return f"<Thing {self.name}"
@@ -30,3 +31,8 @@ class Thing:
 
     def __add_new_info(self, name, value):
         setattr(self, name, value)
+        self.__info.append(name)
+
+    @property
+    def info_list(self):
+        return self.__info
