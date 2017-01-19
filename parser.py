@@ -8,6 +8,7 @@ class Tagger:
     def __init__(self, sentence):
         self.sentence = sentence
         self.tag = dict(Tagger.__pos_tagger.pos(self.sentence))
+        self.__nouns = Tagger.__pos_tagger.nouns(self.sentence)
 
     @property
     @return2type(list)
@@ -18,6 +19,10 @@ class Tagger:
     @return2type(list)
     def morph_list(self):
         return self.tag.keys()
+
+    @property
+    def word_list(self):
+        return self.__nouns
 
     def __repr__(self):
         return f"<Tagger {self.sentence}>"
