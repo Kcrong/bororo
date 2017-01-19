@@ -1,5 +1,4 @@
 from konlpy.tag import Mecab
-from utility.exception import ignore
 from utility.data_manage import return2type
 
 
@@ -32,8 +31,7 @@ class Analyser:
         except AssertionError:
             print("Error!!!")
         """
-        with ignore(AssertionError, error_message="Wrong Param!"):
-            assert type(tag) == Tagger
+        assert type(tag) == Tagger
 
         self.tag = tag
 
