@@ -13,8 +13,8 @@ class Info:
         False: "not"
     }
 
-    def __init__(self, bool, name, value):
-        self.bool = bool
+    def __init__(self, _bool, name, value):
+        self.bool = _bool
         self.name = name
         self.value = value
 
