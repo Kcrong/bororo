@@ -25,9 +25,9 @@ class ignore:
         return exception_type is not None and issubclass(exception_type, self._exceptions)
 
 
-class InvalidRuleException(Exception):
+class AlreadyKnownError(Exception):
     pass
 
 
-class CompleteEvolution(Exception):
+class AnalysisError(Exception):
     pass
