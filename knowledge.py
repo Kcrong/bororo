@@ -3,7 +3,7 @@ Manage trained things
 """
 
 
-class KnownError(Exception):
+class AlreadyKnowError(Exception):
     pass
 
 
@@ -43,7 +43,7 @@ class Thing:
                 self.__add_new_info(name, value, _bool)
             else:
                 # raise AlreadyKnowError
-                raise KnownError("This information is already known.")
+                raise AlreadyKnowError("This information is already known.")
 
     def __add_new_info(self, name, value, _bool):
         setattr(self, name, Info(_bool, name, value))
