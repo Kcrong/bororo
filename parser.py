@@ -16,7 +16,7 @@ class Tagger:
 
     @property
     @return2type(list)
-    def word_list(self):
+    def morph_list(self):
         return self.tag.keys()
 
     def __repr__(self):
