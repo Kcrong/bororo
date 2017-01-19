@@ -45,7 +45,7 @@ class Thing:
                 raise KnownError("This information is already known.")
 
     def __add_new_info(self, name, value, _bool):
-        setattr(self, name, value)
+        setattr(self, name, Info(_bool, name, value))
         self.__info.append(name)
 
     @property
