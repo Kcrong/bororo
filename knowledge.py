@@ -6,6 +6,9 @@ from utility.exception import AlreadyKnownError
 
 
 class Info:
+    """
+    Get Info of Things. (Color, Size, etc, ...)
+    """
     bool_str_mapper = {
         True: "",
         False: "not"
@@ -21,6 +24,11 @@ class Info:
 
 
 class Thing:
+    """
+    Things that learned.
+    Apple, Person, ... Just 'Things'
+    """
+
     def __init__(self):
         self.name = None
         self.__info = ["name"]
