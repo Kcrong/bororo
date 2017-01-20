@@ -1,4 +1,4 @@
-from knowledge import Brain
+from .knowledge import Brain
 
 
 class Bot:
