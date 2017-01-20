@@ -79,3 +79,21 @@ class Brain:
                 return learned_thing
         else:
             return None
+
+    def learn_thing(self, name, force=False):
+        try:
+            # check already know
+            assert self.remember_things(name) is not None
+        except AssertionError:
+            self.__add_new_thing(name)
+        else:
+            # if already know
+            # check force learning option
+            if force is True:
+                self.__add_new_thing(name)
+            else:
+                # raise AlreadyKnowError
+                raise AlreadyKnownError(f"{name} is already known.")
+
+    def __add_new_thing(self, name):
+        self.__learned_list.append(Thing(name))
