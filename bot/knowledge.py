@@ -84,7 +84,7 @@ class Brain:
         if value is None:  # Just Add things
             self._learn_thing(name, force=force)
         else:
-            self._learn_info(name, value, _bool, force=force)
+            self._learn_info(name, value, _bool)
 
     def _learn_thing(self, name, force=False):
         try:
