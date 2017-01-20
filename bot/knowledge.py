@@ -80,6 +80,12 @@ class Brain:
         else:
             return None
 
+    def learn(self, name, value=None, _bool=None, force=False):
+        if value is None:  # Just Add things
+            self._learn_thing(name, force=force)
+        else:
+            self._learn_info(name, value, _bool, force=force)
+
     def _learn_thing(self, name, force=False):
         try:
             # check already know
