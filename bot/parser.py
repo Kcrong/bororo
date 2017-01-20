@@ -76,8 +76,3 @@ class Analyser:
                     name = morph
 
         return name, mean
-
-
-if __name__ == '__main__':
-    a = Analyser("사과는 과일이다.")
-    print(a.name, a.mean, a.bool_type)
