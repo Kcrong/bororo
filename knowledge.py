@@ -7,7 +7,7 @@ from utility.exception import AlreadyKnownError
 
 class Info:
     """
-    Get Info of Things. (Color, Size, etc, ...)
+    Manage information about objects
     """
     bool_str_mapper = {
         True: "",
@@ -25,7 +25,7 @@ class Info:
 
 class Thing:
     """
-    Things that learned.
+    Manage learned objects
     Apple, Person, ... Just 'Things'
     """
 
