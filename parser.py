@@ -32,6 +32,7 @@ class Tagger:
 class Analyser:
     """
     Tokenize Sentence
+    TODO: analyze sentence with https://cloud.google.com/natural-language/
     """
     def __init__(self, sentence):
         self.tag = Tagger(sentence)
