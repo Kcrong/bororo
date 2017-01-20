@@ -58,3 +58,24 @@ class Thing:
     @property
     def info_list(self):
         return self.__info
+
+
+class Brain:
+    """
+    Manage knowledge that learned.
+    """
+
+    def __init__(self, username):
+        # Name for user identification.
+        self.username = username
+        self.__learned_list = list()
+
+    def __repr__(self):
+        return f"<Brain {self.username}>"
+
+    def remember_things(self, name):
+        for learned_thing in self.__learned_list:
+            if learned_thing.name == name:
+                return learned_thing
+        else:
+            return None
