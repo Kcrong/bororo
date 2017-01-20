@@ -73,7 +73,7 @@ class Brain:
     def __repr__(self):
         return f"<Brain {self.username}>"
 
-    def __remember_things(self, name):
+    def remember_things(self, name):
         for learned_thing in self.__learned_list:
             if learned_thing.name == name:
                 return learned_thing
@@ -83,7 +83,7 @@ class Brain:
     def learn_thing(self, name, force=False):
         try:
             # check already know
-            assert self.__remember_things(name) is not None
+            assert self.remember_things(name) is not None
         except AssertionError:
             self.__add_new_thing(name)
         else:
