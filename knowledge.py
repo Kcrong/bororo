@@ -20,7 +20,7 @@ class Info:
         self.value = value
 
     def __repr__(self):
-        return f"<Info {self.name} is {self.bool_str_mapper[self.bool]} {self.value}"
+        return f"<Info {self.name} is {self.bool_str_mapper[self.bool]} {self.value}>"
 
 
 class Thing:
@@ -34,7 +34,7 @@ class Thing:
         self.__info = ["name"]
 
     def __repr__(self):
-        return f"<Thing {self.name}"
+        return f"<Thing {self.name}>"
 
     def learn_info(self, name, value, _bool, force=False):
         try:
