@@ -29,8 +29,8 @@ class Thing:
     Apple, Person, ... Just 'Things'
     """
 
-    def __init__(self):
-        self.name = None
+    def __init__(self, name=None):
+        self.name = name
         self.__info = ["name"]
 
     def __repr__(self):
