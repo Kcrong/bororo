@@ -97,3 +97,7 @@ class Brain:
 
     def __add_new_thing(self, name):
         self.__learned_list.append(Thing(name))
+
+    @property
+    def thing_just_before(self):
+        return self.__learned_list[-1]
