@@ -21,9 +21,6 @@ class Bot:
             # learn(self, name, value=None, _bool=None, force=False)
             self.brain.learn(anal.name, anal.mean, anal.bool_type)
 
-            if anal.mean is not None:  # when information about the object is also available
-                self.brain.thing_just_before.learn_info(anal.name, anal.mean, anal.bool_type)
-
         else:  # if we already know
             print(f"Get Already Known Thing. {anal.name}")
             known.learn_info(anal.name, anal.mean, anal.bool_type)
