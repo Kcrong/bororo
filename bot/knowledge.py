@@ -80,7 +80,7 @@ class Brain:
         else:
             return None
 
-    def learn_thing(self, name, force=False):
+    def _learn_thing(self, name, force=False):
         try:
             # check already know
             assert self.remember_things(name) is not None
