@@ -73,6 +73,17 @@ class Brain:
     def __repr__(self):
         return f"<Brain {self.username}>"
 
+    def print_my_knowledge(self):
+        print("\n")
+        print("------------Brain Status------------")
+        for know in self.__learned_list:
+            if type(know) == Info:
+                print(f"[Info] {know.name} is {know.value}. positive: {know.bool}")
+            elif type(know) == Thing:
+                pass
+
+        print("\n\n")
+
     def remember_things(self, name):
         for learned_thing in self.__learned_list:
             if learned_thing.name == name:
