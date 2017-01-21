@@ -2,6 +2,8 @@ from utility.exception import AnalysisError
 from .knowledge import Brain
 from .parser import Analyser
 
+from .expression import agreement, ask, sympathy
+
 
 class Bot:
     def __init__(self, name):
