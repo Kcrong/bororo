@@ -44,9 +44,9 @@ class Analyser:
     def __analysis(self):
         for pos in self.tag.pos_list:
             if pos.startswith("VC"):
-                if pos.endswith("P"):  # positive designator
+                if "P" in pos:  # positive designator
                     bool_type = True
-                elif pos.endswith("N"):  # negative designator
+                elif "N" in pos:  # negative designator
                     bool_type = False
                 else:
                     raise AnalysisError("UnKnown Designator")
