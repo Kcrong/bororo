@@ -53,7 +53,6 @@ class Analyser:
                 break
         else:
             # sentence has no designator
-            print(f"Can't Analysis \"{self.tag.sentence}\"")
             raise AnalysisError("UnKnown Sentences")
 
         name, mean = self.find_direct_object_info()
