@@ -49,4 +49,5 @@ class Bot:
 
             resp = Bot.make_response_sentence(agreement, anal.name, anal.mean)
 
+        print(f"[Bot LOG] Make response.")
         return resp
