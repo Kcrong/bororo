@@ -95,15 +95,15 @@ class Brain:
 
     def learn(self, name, attr=None, value=None, _bool=None, force=False):
         if attr is None:  # Just Add things
-            self._learn_thing(name, force=force)
+            self._learn_thing(name, value, force=force)
         else:
             self._learn_info(name, attr, value, _bool)
 
-    def _learn_thing(self, name, force=False):
-        try:
-            # check already know
-            assert self.remember_things(name) is not None
-        except AssertionError:
+    def _learn_thing(self, name, value, force=False):
+
+        # check already know
+        known = self.remember_things(name)
+        if known is None:
             self.__add_new_thing(name)
         else:
             # if already know
