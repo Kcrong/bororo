@@ -55,7 +55,7 @@ class Analyser:
             # sentence has no designator
             raise AnalysisError("UnKnown Sentences")
 
-        name, mean = self.find_direct_object_info()
+        name, attr, mean = self.find_direct_object_info()
 
         return name, mean, bool_type
 
@@ -64,6 +64,7 @@ class Analyser:
         Find the 'direct object' from self.sentence and its meaning.
         """
         name = None
+        attr = None
         mean = None
 
         for idx in range(len(self.tag.pos)):
@@ -71,7 +72,9 @@ class Analyser:
             if morph in self.tag.word_list:
                 if self.tag.pos_list[idx + 1].startswith("VC"):
                     mean = morph
+                elif name is not None and len(self.tag.word_list) > 2:
+                    attr = morph
                 else:
                     name = morph
 
-        return name, mean
+        return name, attr, mean
