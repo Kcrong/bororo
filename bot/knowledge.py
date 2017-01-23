@@ -36,7 +36,7 @@ class Thing:
     def __repr__(self):
         return f"<Thing {self.name}>"
 
-    def learn_info(self, name, value, _bool, force=False):
+    def learn_info(self, name, value, _bool=True, force=False):
         try:
             # check already know
             assert getattr(self, name) is not None
