@@ -4,7 +4,7 @@
 
 
 ## Started..
-[Bororo](http://github.com/kcrong/bororo) is Chatbot for [Kcrong](http://github.com/kcrong)
+Chatbot for [Kcrong](http://github.com/kcrong)
 
 
 ## Requirements
