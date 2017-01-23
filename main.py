@@ -28,4 +28,4 @@ if __name__ == '__main__':
     b.brain.print_my_knowledge()
     print(b.get_response("손건은 남자다"))
     b.brain.print_my_knowledge()
-    print(b.get_response("손건은 여"))
+    print(b.get_response("손건은 여자다."))
