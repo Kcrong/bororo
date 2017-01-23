@@ -43,7 +43,7 @@ class Analyser:
 
     def __analysis(self):
         for pos in self.tag.pos_list:
-            if pos.startswith("VC"):
+            if pos.startswith("VC"):  # check if sentence have designator
                 if "P" in pos:  # positive designator
                     bool_type = True
                 elif "N" in pos:  # negative designator
