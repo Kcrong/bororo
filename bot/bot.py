@@ -3,7 +3,7 @@ from random import choice
 from utility.exception import AnalysisError
 from .knowledge import Brain
 from .parser import Analyser
-from .expression import agreement, ask, sympathy
+from .expression import agreement, sympathy
 
 
 class Bot:
