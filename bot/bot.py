@@ -25,19 +25,19 @@ class Bot:
         return exp
 
     def get_response(self, talk):
-        print(f"[Bot LOG] Start Analyze {talk}")
+        # print(f"[Bot LOG] Start Analyze {talk}")
 
         try:
             anal = Analyser(talk)
         except AnalysisError:
             # if there is no designator
             # Just return sympathy expression
-            print(f"[Bot LOG] Can't Analysis \"{talk}\"")
+            # print(f"[Bot LOG] Can't Analysis \"{talk}\"")
             resp = Bot.make_response_sentence(sympathy)
         else:
             self.brain.learn(anal.name, anal.attr, anal.mean, anal.bool_type)
 
             resp = Bot.make_response_sentence(agreement, anal.name, anal.mean)
 
-        print(f"[Bot LOG] Make response.")
+        # print(f"[Bot LOG] Make response.")
         return resp
