@@ -112,7 +112,8 @@ class Brain:
                 self.__add_new_thing(name)
             else:
                 # raise AlreadyKnowError
-                raise AlreadyKnownError(f"{name} is already known.")
+                known.learn_info(value, True)
+                # raise AlreadyKnownError(f"{name} is already known.")
 
     def _learn_info(self, name, attr, value, _bool):
         known_thing = self.remember_things(name)
