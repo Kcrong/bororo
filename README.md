@@ -4,8 +4,7 @@
 
 
 ## Started..
-Bororo is a friend of kcrong.
-That's why this chatbot's name is bororo.
+[Bororo](http://github.com/kcrong/bororo) is Chatbot for [Kcrong](http://github.com/kcrong)
 
 
 ## Requirements
