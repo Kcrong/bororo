@@ -80,7 +80,9 @@ class Brain:
             if type(know) == Info:
                 print(f"[Info] {know.name} is {know.value}. positive: {know.bool}")
             elif type(know) == Thing:
-                pass
+                print(f"Thing {know.name} : ")
+                for attr in know.info_list:
+                    print(f">>> {know.name}'s {attr} is {getattr(know, attr)}")
 
         print("\n\n")
 
