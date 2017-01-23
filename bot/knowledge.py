@@ -115,6 +115,12 @@ class Brain:
                 known.learn_info(value, True)
                 # raise AlreadyKnownError(f"{name} is already known.")
 
+        if value is not None:
+            try:
+                self.thing_just_before.learn_info(value, True)
+            except AlreadyKnownError:
+                pass
+
     def _learn_info(self, name, attr, value, _bool):
         known_thing = self.remember_things(name)
 
