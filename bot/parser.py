@@ -36,7 +36,7 @@ class Analyser:
     """
     def __init__(self, sentence):
         self.tag = Tagger(sentence)
-        self.name, self.mean, self.bool_type = self.__analysis()
+        self.name, self.attr, self.mean, self.bool_type = self.__analysis()
 
     def __repr__(self):
         return f"<Analyser {self.tag.sentence}>"
@@ -57,7 +57,7 @@ class Analyser:
 
         name, attr, mean = self.find_direct_object_info()
 
-        return name, mean, bool_type
+        return name, attr, mean, bool_type
 
     def find_direct_object_info(self):
         """

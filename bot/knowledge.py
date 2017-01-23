@@ -91,11 +91,11 @@ class Brain:
         else:
             return None
 
-    def learn(self, name, value=None, _bool=None, force=False):
-        if value is None:  # Just Add things
+    def learn(self, name, attr=None, value=None, _bool=None, force=False):
+        if attr is None:  # Just Add things
             self._learn_thing(name, force=force)
         else:
-            self._learn_info(name, value, _bool)
+            self._learn_info(name, attr, value, _bool)
 
     def _learn_thing(self, name, force=False):
         try:
@@ -112,7 +112,15 @@ class Brain:
                 # raise AlreadyKnowError
                 raise AlreadyKnownError(f"{name} is already known.")
 
-    def _learn_info(self, name, value, _bool):
+    def _learn_info(self, name, attr, value, _bool):
+        known_thing = self.remember_things(name)
+
+        if known_thing is None:
+            self.__add_new_thing(name)
+            known_thing = self.thing_just_before
+
+        known_thing.learn_info(attr, value, _bool)
+
         self.__add_new_info(name, value, _bool)
 
     def __add_new_info(self, name, value, _bool):
