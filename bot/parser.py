@@ -29,7 +29,7 @@ class Tagger:
         return f"<Tagger {self.sentence}>"
 
 
-class Analyser:
+class Analyzer:
     """
     Tokenize Sentence
     TODO: analyze sentence with https://cloud.google.com/natural-language/

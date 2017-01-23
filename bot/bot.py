@@ -2,7 +2,7 @@ from random import choice
 
 from utility.exception import AnalysisError
 from .knowledge import Brain
-from .parser import Analyser
+from .parser import Analyzer
 from .expression import agreement, sympathy
 
 
@@ -28,7 +28,7 @@ class Bot:
         # print(f"[Bot LOG] Start Analyze {talk}")
 
         try:
-            anal = Analyser(talk)
+            anal = Analyzer(talk)
         except AnalysisError:
             # if there is no designator
             # Just return sympathy expression
