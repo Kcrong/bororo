@@ -140,4 +140,7 @@ class Brain:
 
     @property
     def thing_just_before(self):
-        return self.__learned_list[-1]
+        try:
+            return self.__learned_list[-1]
+        except IndexError:
+            return None
